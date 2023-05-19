@@ -1,9 +1,29 @@
 import React from 'react';
 
 const AddUser = () => {
+    const formHandle = (e) => {
+        e.preventDefault();
+        const form = e.target;
+        const name = form.name.value;
+        const email = form.email.value;
+        const phone = form.phone.value;
+        const location = form.location.value;
+        const gender = form.gender.value;
+
+        const userData = {
+            name,
+            email,
+            phone,
+            location,
+            gender,
+        }
+
+        console.log(userData)
+
+    }
     return (
         <div>
-            <form>
+            <form onSubmit={formHandle}>
                 <div className="w-full max-w-xl mx-auto py-20">
 
                     <div className='text-center bg-slate-500 text-white text-3xl uppercase py-5 font-bold px-4 rounded'>
@@ -12,22 +32,22 @@ const AddUser = () => {
                     <label className="label">
                         <span className="label-text">What is your name?</span>
                     </label>
-                    <input type="text" placeholder="Type here" className="input input-bordered w-full" />
+                    <input name='name' type="text" placeholder="Type here" className="input input-bordered w-full" />
 
                     <label className="label">
                         <span className="label-text">What is your email?</span>
                     </label>
-                    <input type="email" placeholder="Type here" className="input input-bordered w-full" />
+                    <input name='email' type="email" placeholder="Type here" className="input input-bordered w-full" />
 
                     <label className="label">
                         <span className="label-text">What is your number?</span>
                     </label>
-                    <input type="tel" placeholder="Type here" className="input input-bordered w-full" />
+                    <input name='phone' type="tel" placeholder="Type here" className="input input-bordered w-full" />
 
                     <label className="label">
                         <span className="label-text">What is your Adress?</span>
                     </label>
-                    <input type="text" placeholder="Type here" className="input input-bordered w-full" />
+                    <input name='location' type="text" placeholder="Type here" className="input input-bordered w-full" />
 
 
 
